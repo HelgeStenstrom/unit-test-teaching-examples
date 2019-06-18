@@ -1,0 +1,12 @@
+# Generated
+bin/
+
+# Jetbrains
+.idea/
+*.iml
+
+# Maven
+target/
+
+# MacOS
+.DS_Store
