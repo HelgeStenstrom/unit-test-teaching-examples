@@ -1,10 +1,9 @@
 package calculator_20090512;
 
-import org.mortbay.jetty.Handler;
 import org.mortbay.jetty.servlet.ServletHandler;
 import org.mortbay.jetty.servlet.ServletHolder;
 
-public class Server {
+class Server {
 
   private org.mortbay.jetty.Server server;
 

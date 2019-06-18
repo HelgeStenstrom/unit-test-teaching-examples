@@ -27,11 +27,11 @@ public class TestableCodeTest extends TestCase {
      */
     final ExpensiveService expensive;
 
-    public ClassUnderTest(ExpensiveService expensive) {
+    ClassUnderTest(ExpensiveService expensive) {
       this.expensive = expensive;
     }
 
-    public boolean testMe() {
+    boolean testMe() {
       expensive.untestableMethod();
       return true;
     }
@@ -40,7 +40,7 @@ public class TestableCodeTest extends TestCase {
   private static class FriendlyExpensiveService implements ExpensiveService {
     private final StringBuilder log;
 
-    public FriendlyExpensiveService(StringBuilder log) {
+    FriendlyExpensiveService(StringBuilder log) {
       this.log = log;
     }
 
@@ -49,7 +49,7 @@ public class TestableCodeTest extends TestCase {
     }
   }
 
-  public void testWeCanPassAFriendlyToTestThis() throws Exception {
+  public void testWeCanPassAFriendlyToTestThis() {
     StringBuilder log = new StringBuilder();
     ExpensiveService friendlyService = new FriendlyExpensiveService(log);
     ClassUnderTest cut = new ClassUnderTest(friendlyService);

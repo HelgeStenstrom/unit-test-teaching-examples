@@ -3,7 +3,6 @@ package di.webserver;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +22,7 @@ public class CalculatorServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws ServletException, IOException {
+      throws IOException {
     float a = Float.parseFloat(req.getParameter("a"));
     float b = Float.parseFloat(req.getParameter("b"));
     float result = calculator.calculate(req.getParameter("op"), a, b);

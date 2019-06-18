@@ -28,15 +28,15 @@ public class UntestableCodeTest extends TestCase {
      * zero benefit. Having an interface gives us a false sense that we have a
      * seam here.
      */
-    ExpensiveService expensive = new StandardExpensiveService();
+    final ExpensiveService expensive = new StandardExpensiveService();
 
-    public boolean testMe() {
+    boolean testMe() {
       expensive.untestableMethod();
       return true;
     }
   }
 
-  public void testThereIsNothingWeCanDoToTestThis() throws Exception {
+  public void testThereIsNothingWeCanDoToTestThis() {
     ClassUnderTest cut = new ClassUnderTest();
     boolean response = cut.testMe();
     assertTrue(response);

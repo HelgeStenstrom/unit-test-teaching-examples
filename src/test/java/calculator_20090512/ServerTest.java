@@ -16,7 +16,7 @@ public class ServerTest extends TestCase {
 
   private Server calculatorServer;
   
-  private int port = 4040;
+  private final int port = 4040;
   
   @Override
   protected void setUp() throws Exception {

@@ -5,9 +5,7 @@ import java.util.Date;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
 
-import com.google.inject.Provider;
-
-public class ServerBuilder {
+class ServerBuilder {
 
 
   public ServerBuilder(String... args) {
@@ -22,11 +20,7 @@ public class ServerBuilder {
 
     new ServletBuilder(server)
       .addServlet("/calc", new CalculatorServlet(new Calculator()))
-      .addServlet("/time", new TimeServlet(new Provider<Date>() {
-        public Date get() {
-          return new Date();
-        }
-      }));
+      .addServlet("/time", new TimeServlet(Date::new));
 
     return server;
   }

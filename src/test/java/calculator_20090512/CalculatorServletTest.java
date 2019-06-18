@@ -1,16 +1,13 @@
 package calculator_20090512;
 
-import calculator_20090512.Calculator;
-import calculator_20090512.CalculatorServlet;
-
 import org.jmock.integration.junit3.MockObjectTestCase;
 
 import java.util.HashMap;
 
 public class CalculatorServletTest extends MockObjectTestCase {
 
-  Calculator calculator;
-  CalculatorServlet calculatorServlet = new CalculatorServlet();
+  private Calculator calculator;
+  private final CalculatorServlet calculatorServlet = new CalculatorServlet();
   
   @Override
   protected void setUp() throws Exception {
@@ -18,8 +15,8 @@ public class CalculatorServletTest extends MockObjectTestCase {
     calculator = mock(Calculator.class);
   }
   
-  public void testAdditionOfTwoInts() throws Exception {
-    HashMap<String, String[]> params = new HashMap<String, String[]>();
+  public void testAdditionOfTwoInts() {
+    HashMap<String, String[]> params = new HashMap<>();
     params.put("num1", new String[] {"5"});
     params.put("num2", new String[] {"2"});
     params.put("oper", new String[] {"+"});
@@ -29,8 +26,8 @@ public class CalculatorServletTest extends MockObjectTestCase {
   }
   
   
-  public void testAdditionOfNegativeInts() throws Exception {
-    HashMap<String, String[]> params = new HashMap<String, String[]>();
+  public void testAdditionOfNegativeInts() {
+    HashMap<String, String[]> params = new HashMap<>();
     params.put("num1", new String[] {"-5"});
     params.put("num2", new String[] {"2"});
     params.put("oper", new String[] {"+"});

@@ -8,12 +8,12 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
-public class CalculatorServerModule extends AbstractModule {
+class CalculatorServerModule extends AbstractModule {
 
   static class ServerProvider implements Provider<Server> {
     @Inject CalculatorServlet calculatorServlet;
     @Inject TimeServlet timeServlet;
-    private Server server = new Server();
+    private final Server server = new Server();
     public Server get() {
 
       SocketConnector socketConnector = new SocketConnector();
